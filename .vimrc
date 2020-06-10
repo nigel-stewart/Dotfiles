@@ -1,9 +1,7 @@
-" NeoVim Config - Sep 2019
+" NeoVim Config - June 2020
 " Inspired by Daniel Miessler's Vim Config
 " https://danielmiessler.com/blog/vim-configuration-update-2019-version/
-
 " BASIC CONFIG
-
 " Remap Escape
 inoremap jk <ESC>
 
@@ -19,11 +17,17 @@ noremap <Leader>e :wq<CR>
 " Exit without saving using the leader key
 noremap <Leader>q :q!<CR>
 
+" Goto line using a double-tap on the leader key, after your line number
+noremap <Leader><Leader> G
+
 " Enable syntax highlighting
 syntax on
 
 " Set the shell
 set shell=/bin/zsh
+
+" Spaces not tabs (4 wide)
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " Clipboard functionality (paste from system)
 vnoremap <leader>y "+y
@@ -32,6 +36,8 @@ vnoremap <leader>p "+p
 noremap  <leader>p "+p
 
 " Look and feel
+" Set vim-airline theme
+let g:airline_theme='monochrome'
 
 "" PLUGIN MANAGEMENT
 packadd minpac
